@@ -1,0 +1,99 @@
+{
+  "48b19081-9dc3-4935-ad3a-bd7b5a33f421": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Excel Online (Business)",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1573/1.0.1573.2770/excelonlinebusiness/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_excelonlinebusiness",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "sites%252Fgssecurityjsc.sharepoint.com%252Cc7282422-0cd7-49e6-83f7-2872613ff8d2%252Cc6454a98-708d-4fcd-a9af-7b82d66dd3de,b%2521IiQox9cM5kmD9yhyYT_40phKRcaNcM1Pqa97gtZt096Qg4VymqORQLMzXjoAe8WZ,01D7XOVD2F2AR5JSDRVJPXGXFV6CRXANTK": {
+        "dataSources": {
+          "Table2": {
+            "tableName": "{163FD697-13DA-4981-B33E-98813615E6AB}"
+          }
+        }
+      },
+      "sites%252Fgssecurityjsc.sharepoint.com%252Cc7282422-0cd7-49e6-83f7-2872613ff8d2%252Cc6454a98-708d-4fcd-a9af-7b82d66dd3de,b%2521IiQox9cM5kmD9yhyYT_40phKRcaNcM1Pqa97gtZt096Qg4VymqORQLMzXjoAe8WZ,01D7XOVD75DZML3IK4MFIP4KSXQYYAXMBP": {
+        "dataSources": {
+          "Table4": {
+            "tableName": "{6004C6FA-B8A0-4AC9-984E-E6A8F79C91AA}"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Table4",
+      "Table2"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "48b19081-9dc3-4935-ad3a-bd7b5a33f421"
+  },
+  "75868fc1-27bd-46b1-87ab-c8bf060d9662": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office 365 Users",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1573/1.0.1573.2770/office365users/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365users",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Users"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "75868fc1-27bd-46b1-87ab-c8bf060d9662"
+  },
+  "a36daa0d-b125-478c-a51f-90b226f02b43": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Microsoft Teams",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1574/1.0.1574.2781/teams/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_teams",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "MicrosoftTeams"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "a36daa0d-b125-478c-a51f-90b226f02b43"
+  },
+  "e5871e89-33cc-4ceb-bb3d-a2bc4ce82a7e": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Bing Maps",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1567/1.0.1567.2748/bingmaps/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_bingmaps",
+      "parameterHints": {},
+      "parameterHintsV2": {},
+      "sharedConnectionId": "/providers/microsoft.powerapps/apis/shared_bingmaps/connections/18d6082ed08c449cb3b7b04841650975"
+    },
+    "datasets": {},
+    "dataSources": [
+      "BingMaps"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "e5871e89-33cc-4ceb-bb3d-a2bc4ce82a7e"
+  }
+}

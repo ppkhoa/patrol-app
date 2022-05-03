@@ -1,0 +1,122 @@
+{
+  "ComponentIndexes": {},
+  "ControlUniqueIds": {
+    "App": 1,
+    "Button1": 12,
+    "Button2": 14,
+    "Button2_1": 16,
+    "Dropdown1": 7,
+    "HtmlText1": 10,
+    "HtmlText2": 13,
+    "iconCheck1": 25,
+    "iconCheck1_1": 20,
+    "iconCircle1": 24,
+    "Image1": 4,
+    "Label1": 8,
+    "Label2": 9,
+    "Label3": 6,
+    "Label5_1": 15,
+    "Label5_2": 17,
+    "Label5_3": 18,
+    "LblSuccessMsg1": 26,
+    "LblSuccessMsg1_1": 22,
+    "LblSuccessMsg1_2": 21,
+    "Screen1": 3,
+    "Screen2": 23,
+    "Screen2_1": 19,
+    "TextInput1": 11,
+    "Timer1": 5
+  },
+  "FunctionParamsInvariantScripts": {},
+  "HeaderLastSavedDateTimeUTC": "05/03/2022 11:17:09",
+  "IsLegacyComponentAllowGlobalScopeCase": false,
+  "LocalConnectionIDReferences": {
+    "48b19081-9dc3-4935-ad3a-bd7b5a33f421": "\"/providers/microsoft.powerapps/apis/shared_excelonlinebusiness/connections/bf590eba29bb4ad6b73b79d0d6fbb8ed\"",
+    "75868fc1-27bd-46b1-87ab-c8bf060d9662": "\"/providers/microsoft.powerapps/apis/shared_office365users/connections/bfe6750a4e464b8b9b84d6cf48b3f3e0\"",
+    "a36daa0d-b125-478c-a51f-90b226f02b43": "\"/providers/microsoft.powerapps/apis/shared_teams/connections/shared-teams-cb6b366e-0f37-46de-99ba-bbecc32e44a8\"",
+    "e5871e89-33cc-4ceb-bb3d-a2bc4ce82a7e": "\"/providers/microsoft.powerapps/apis/shared_bingmaps/connections/18d6082ed08c449cb3b7b04841650975\""
+  },
+  "LocalDatabaseReferencesAsEmpty": false,
+  "LocalResourceFileNames": {
+    "LOGO 1-01": "0002.png"
+  },
+  "LocalResourceRootPaths": {
+    "LOGO 1-01": "https://docserverpwaprodseas.blob.core.windows.net/be5a52d8-4097-4e2e-92db-4e8931ae5b8a-1/resource/Assets0Images00002.png?sv=2017-04-17&sr=b&sig=j1PrGBjgJD1d%2BFgx1my5%2FrR5S4eCkkihWDQwVjjHzaA%3D&spr=https&se=2022-05-04T11%3A28%3A30Z&sp=r"
+  },
+  "OldLogoFileName": "r2tmhmfy.jpg",
+  "OrderComponentMetadata": {},
+  "OrderComponentTemplate": {},
+  "OrderDataSource": {
+    "BingMaps": 0,
+    "CustomGallerySample": 6,
+    "DropDownSample": 5,
+    "MicrosoftTeams": 1,
+    "Office365Users": 2,
+    "Table2": 3,
+    "Table4": 4
+  },
+  "OrderGroupControls": {},
+  "OrderPcfTemplate": {},
+  "OrderTemplate": {},
+  "OrderXMLTemplate": {
+    "button": 6,
+    "circle": 8,
+    "dropdown": 3,
+    "htmlViewer": 4,
+    "icon": 7,
+    "image": 0,
+    "label": 2,
+    "text": 5,
+    "timer": 1
+  },
+  "PublishOrderIndices": {
+    "App": 0,
+    "Button1": 8,
+    "Button2": 10,
+    "Button2_1": 12,
+    "Dropdown1": 3,
+    "HtmlText1": 6,
+    "HtmlText2": 9,
+    "iconCheck1": 16,
+    "iconCheck1_1": 18,
+    "iconCircle1": 15,
+    "Image1": 0,
+    "Label1": 4,
+    "Label2": 5,
+    "Label3": 2,
+    "Label5_1": 11,
+    "Label5_2": 13,
+    "Label5_3": 14,
+    "LblSuccessMsg1": 17,
+    "LblSuccessMsg1_1": 20,
+    "LblSuccessMsg1_2": 19,
+    "Screen1": 0,
+    "Screen2": 0,
+    "Screen2_1": 0,
+    "TextInput1": 7,
+    "Timer1": 1
+  },
+  "ResourcesJsonIndices": {
+    "Image-LOGO 1-01": 1,
+    "Image-SampleImage": 0
+  },
+  "TemplateVersions": {},
+  "VolatileProperties": {
+    "AnalysisLoadTime": 0.2627863,
+    "ControlCount": {
+      "button": 3,
+      "circle": 1,
+      "dropdown": 1,
+      "htmlViewer": 2,
+      "icon": 2,
+      "image": 1,
+      "label": 9,
+      "screen": 3,
+      "text": 1,
+      "timer": 1
+    },
+    "DeserializationLoadTime": 0.5688647,
+    "ErrorCount": 0
+  },
+  "WasLocalDatabaseReferencesEmpty": true
+}

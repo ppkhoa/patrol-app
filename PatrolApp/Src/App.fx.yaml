@@ -1,0 +1,8 @@
+App As appinfo:
+    BackEnabled: =true
+    ConfirmExit: =true
+    ConfirmExitMessage: ="Nhấn OK để thoát và đăng xuất"
+    OnStart: |-
+        =Set(VarStartTimer, false); Set(username, Office365Users.UserProfileV2(User().Email).displayName);
+        Set(error, Blank());
+
