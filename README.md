@@ -1,4 +1,4 @@
-# patrol-app
+# Patrol
 App phục vụ công việc tuần tra an ninh tại các địa điểm được đặt trước, đảm bảo tính chính xác dựa vào dữ liệu tọa độ định vị từ GPS của thiết bị nhập thông tin.
 
 ## **Về app Patrol**
