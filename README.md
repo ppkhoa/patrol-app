@@ -16,7 +16,5 @@ Tải repo app Patrol về, zip lại và import vào PowerApps. Điều chỉnh
 Nếu trong quá trình sử dụng gặp bất cứ vấn đề nào, vui lòng tạo `Issue` mới để được hỗ trợ.
 
 
-
 ## **Bản quyền và trách nhiệm**
-
 App Patrol được tạo và đang sử dụng tại [GSS](https://gssecurity.com.vn). App trên repo có sử dụng logo và tên doanh nghiệp GSS. GSS và các logo liên quan là thương hiệu đã được đăng ký bởi Công ty CP An Ninh Thông Minh Toàn Cầu
