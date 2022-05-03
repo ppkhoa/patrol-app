@@ -17,4 +17,4 @@ Nếu trong quá trình sử dụng gặp bất cứ vấn đề nào, vui lòng
 
 ## **Bản quyền và trách nhiệm**
 
-App Patrol được tạo và đang sử dụng tại [GSS](https://gssecurity.com.vn). App trên repo có sử dụng logo và tên doanh nghiệp GSS. GSS và các logo liên quan là thương hiệu đã được đăng ký bới Công ty CP An Ninh Thông Minh Toàn Cầu
+App Patrol được tạo và đang sử dụng tại [GSS](https://gssecurity.com.vn). App trên repo có sử dụng logo và tên doanh nghiệp GSS. GSS và các logo liên quan là thương hiệu đã được đăng ký bởi Công ty CP An Ninh Thông Minh Toàn Cầu
