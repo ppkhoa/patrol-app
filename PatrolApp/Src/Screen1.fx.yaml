@@ -38,11 +38,11 @@ Screen1 As screen:
                     lat,
                     lng
                 ).address.addressLine
-            );
+            );//S
             Set(
                 label2Text,
                 lat & ", " & lng
-            );
+            );//G
             Set(
                 dist,
                 With(
@@ -56,14 +56,14 @@ Screen1 As screen:
                     },
                     (2 * r) * Asin(Sqrt(0.5 - Cos((latA - latB) * p)/2 + Cos(latB * p) * Cos(latA * p) * (1 - Cos((lonA - lonB) * p)) / 2))
                 )
-            );
+            );//Khoa: Calculate distance between actual and saved coordinates
             Set(
                 targetAddress,
                 BingMaps.GetLocationByPoint(
                     lat,
                     lng
                 ).address.formattedAddress
-            );
+            );//K
             Set(distOutput, Text(dist, "0.###", "en-US") & "</font></b> km");
         Size: =24
         Text: ="Xác nhận địa điểm"
@@ -84,7 +84,7 @@ Screen1 As screen:
                 Set(
                     VarStartTimer,
                     true
-                );
+                );//S
                 Navigate(
                     Screen2_1,
                     ScreenTransition.None
@@ -118,11 +118,11 @@ Screen1 As screen:
                             'Tọa độ check-in': lat & ", " & lng,
                             __PowerAppsId__: ""
                         }
-                    );
+                    );//send
                     Set(
                         VarStartTimer,
                         true
-                    );
+                    );//k
                     Navigate(
                         Screen2,
                         ScreenTransition.None
@@ -130,7 +130,7 @@ Screen1 As screen:
                     Set(
                         error,
                         "Chưa điền đủ thông tin!"
-                    );
+                    );//
                     Set(
                         VarStartTimer,
                         true
@@ -236,7 +236,7 @@ Screen1 As screen:
         AutoHeight: =true
         Height: =32
         HtmlText: |-
-            ="<center>Tên người tuần tra: </align>" & "<b><font color=red>" & username & "</font></b>"
+            ="<center>Tên người tuần tra: </align>" & "<b><font color=red>" & username & "</font></b>"//K: Get userdata from GSS userlist
         Size: =12
         Width: =560
         X: =24
