@@ -7,7 +7,7 @@ Sử dụng app Patrol để  giảm việc báo cáo bằng tay, kiểm soát c
  - Là người có quyền truy cập file báo cáo Excel và file dữ liệu có sắn (địa chỉ, tên mục tiêu, tọa độ)
  - Đã kết nối với Bing Maps với PowerApps (khi nhập app vào PowerApps, nếu chưa có kết nối, PowerApps sẽ nhắc)
  
-!(https://github.com/ppkhoa/ppkhoa.github.io/blob/main/blob/Screenshot%202022-05-03%20191929.png?raw=true) 
+![Ảnh chụp màn hình chính](https://github.com/ppkhoa/ppkhoa.github.io/blob/main/blob/Screenshot%202022-05-03%20191929.png?raw=true) 
 
 ## **Cách sử dụng**
 Tải repo app Patrol về, zip lại và import vào PowerApps. Điều chỉnh kết nối, file Excel xuất báo cáo và danh sách mục tiêu tuần tra cho phù hợp với tổ chức của bạn và bắt đầu sử dụng. Mặc định, app Patrol cho phép sai số tới đa 50m so với vị trí mục tiêu định sẵn.
