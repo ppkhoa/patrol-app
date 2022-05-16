@@ -3,13 +3,14 @@
     "ApiId": "/providers/microsoft.powerapps/apis/shared_excelonlinebusiness",
     "CdpRevision": {
       "BaseUrl": "/",
-      "LastChangedTimeString": "2022-04-19T16:26:58.7660000Z",
+      "LastChangedTimeString": "2022-05-16T16:44:26.7390000Z",
       "RevisionNumber": 1
     },
     "ConnectedDataSourceInfoNameMapping": {
       "__PowerAppsId__": "__PowerAppsId__",
       "Column1": "Column1",
       "Column2": "Column2",
+      "Column3": "Column3",
       "Lat": "Lat",
       "Long": "Long"
     },
