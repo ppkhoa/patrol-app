@@ -152,7 +152,7 @@ Screen1 As screen:
 
     Dropdown1 As dropdown:
         Height: =42
-        Items: =Filter(Table2, Column1 = Dropdown1_1.Selected.Result)
+        Items: =Filter(Table2, Column3 = Dropdown1_1.Selected.Result)
         Size: =21
         Width: =575
         X: =24
@@ -308,7 +308,7 @@ Screen1 As screen:
 
     Dropdown1_1 As dropdown:
         Height: =64
-        Items: =Distinct(Table2,Column3)
+        Items: =Distinct(Table2,Column3).Result
         Size: =21
         Width: =575
         X: =24
