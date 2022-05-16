@@ -14,13 +14,14 @@ Screen1 As screen:
         ZIndex: =3
 
     Label2 As label:
+        Height: =33
         Live: =Live.Polite
         Size: =15
         Text: |-
             ="Tọa độ ghi nhận báo cáo: " & label2Text
-        Width: =560
+        Width: =602
         X: =24
-        Y: =391
+        Y: =405
         ZIndex: =4
 
     Button1 As button:
@@ -69,7 +70,7 @@ Screen1 As screen:
         Text: ="Xác nhận địa điểm"
         Width: =389
         X: =117
-        Y: =697
+        Y: =711
         ZIndex: =5
 
     Button2 As button:
@@ -152,7 +153,7 @@ Screen1 As screen:
 
     Dropdown1 As dropdown:
         Height: =42
-        Items: =If(Dropdown1_1.Selected.Result = "", Table2, Filter(Table2, Column3 = Dropdown1_1.Selected.Result))
+        Items: =Filter(Table2, Column3 = Text(Dropdown1_1.Selected.Result))
         Size: =21
         Width: =575
         X: =24
@@ -186,7 +187,7 @@ Screen1 As screen:
         Size: =21
         Width: =560
         X: =24
-        Y: =545
+        Y: =555
         ZIndex: =16
 
     Label5_1 As label:
@@ -223,13 +224,13 @@ Screen1 As screen:
         ZIndex: =20
 
     HtmlText1 As htmlViewer:
-        Height: =103
+        Height: =95
         HtmlText: |-
             ="Khoảng cách giữa điểm báo cáo và mục tiêu: <b><font color=BLUE>" & distOutput
         Size: =24
         Width: =560
         X: =24
-        Y: =437
+        Y: =451
         ZIndex: =21
 
     HtmlText2 As htmlViewer:
@@ -300,7 +301,7 @@ Screen1 As screen:
         Height: =70
         Size: =21
         Text: |-
-            ="Mục tiêu:"
+            ="Nhóm mục tiêu:"
         Width: =560
         X: =24
         Y: =98
@@ -308,7 +309,11 @@ Screen1 As screen:
 
     Dropdown1_1 As dropdown:
         Height: =64
-        Items: =Distinct(Table2,Column3).Result
+        Items: |-
+            =Distinct(
+                Table2,
+                Column3
+            ).Result
         Size: =21
         Width: =575
         X: =24
