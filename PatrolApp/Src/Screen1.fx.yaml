@@ -167,7 +167,7 @@ Screen1 As screen:
             ="Mục tiêu:"
         Width: =560
         X: =24
-        Y: =228
+        Y: =221
         ZIndex: =12
 
     Image1 As image:
@@ -308,7 +308,7 @@ Screen1 As screen:
         ZIndex: =25
 
     Dropdown1_1 As dropdown:
-        Height: =64
+        Height: =50
         Items: |-
             =Distinct(
                 Table2,
