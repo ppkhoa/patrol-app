@@ -103,18 +103,18 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Screen2_1"
+                  "fullyQualifiedName": "Screen2"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Screen2_1",
+                  "fullyQualifiedName": "Screen2",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "module": "Screen2_1",
-                "type": "Screen2_1"
+                "module": "Screen2",
+                "type": "Screen2"
               }
             }
           ],
@@ -132,18 +132,18 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Screen2"
+                  "fullyQualifiedName": "Screen2_1"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Screen2",
+                  "fullyQualifiedName": "Screen2_1",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "module": "Screen2",
-                "type": "Screen2"
+                "module": "Screen2_1",
+                "type": "Screen2_1"
               }
             }
           ],
