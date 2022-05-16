@@ -187,7 +187,7 @@ Screen1 As screen:
         Size: =21
         Width: =560
         X: =24
-        Y: =555
+        Y: =569
         ZIndex: =16
 
     Label5_1 As label:
@@ -224,13 +224,13 @@ Screen1 As screen:
         ZIndex: =20
 
     HtmlText1 As htmlViewer:
-        Height: =95
+        Height: =108
         HtmlText: |-
             ="Khoảng cách giữa điểm báo cáo và mục tiêu: <b><font color=BLUE>" & distOutput
         Size: =24
         Width: =560
         X: =24
-        Y: =451
+        Y: =459
         ZIndex: =21
 
     HtmlText2 As htmlViewer:
