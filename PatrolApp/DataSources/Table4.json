@@ -3,16 +3,16 @@
     "ApiId": "/providers/microsoft.powerapps/apis/shared_excelonlinebusiness",
     "CdpRevision": {
       "BaseUrl": "/",
-      "LastChangedTimeString": "2022-04-19T16:26:58.7660000Z",
+      "LastChangedTimeString": "2022-05-16T16:44:26.7390000Z",
       "RevisionNumber": 1
     },
     "ConnectedDataSourceInfoNameMapping": {
       "__PowerAppsId__": "__PowerAppsId__",
-      "Column1": "Column1",
       "Địa chỉ báo cáo": "Địa chỉ báo cáo",
       "Điểm": "Điểm",
       "Ghi chú": "Ghi chú",
       "Giờ tuần tra": "Giờ tuần tra",
+      "Image [image]": "Image [image]",
       "Mục tiêu": "Mục tiêu",
       "Người tuần tra": "Người tuần tra",
       "Tọa độ check-in": "Tọa độ check-in"
