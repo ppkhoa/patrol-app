@@ -5,5 +5,4 @@ App As appinfo:
     OnStart: |-
         =Set(VarStartTimer, false); Set(username, Office365Users.UserProfileV2(User().Email).displayName);
         Set(error, Blank());
-        Set(PhotoDateTime, Now())
 

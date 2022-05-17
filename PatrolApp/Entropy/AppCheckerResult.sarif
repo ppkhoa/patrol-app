@@ -280,36 +280,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.PhotoDateTime"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.PhotoDateTime",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "PhotoDateTime",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "App.lat"
                 }
               ],
