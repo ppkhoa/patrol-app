@@ -12,7 +12,7 @@ Screen3 As screen:
     Button3 As button:
         Height: =46
         OnSelect: |
-            =ClearCollect(photo,Camera1.Photo); UpdateContext({PhotoDateTime: "Đã chụp ảnh vào lúc" + Now()}); Set(
+            =ClearCollect(photo,Camera1.Photo); UpdateContext({PhotoDateTime: Now()}); Set(
                     VarStartCamTimer,
                     true
                 );
