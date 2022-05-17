@@ -147,7 +147,7 @@ Screen1 As screen:
             ="Gửi báo cáo
             "
         Width: =318
-        X: =144
+        X: =157
         Y: =884
         ZIndex: =10
 
@@ -196,7 +196,7 @@ Screen1 As screen:
         Size: =12
         Text: ="Kiểm tra tên người tuần tra trước khi gửi báo cáo."
         Width: =560
-        X: =31
+        X: =44
         Y: =928
         ZIndex: =18
 
@@ -240,7 +240,7 @@ Screen1 As screen:
             ="<center>Tên người tuần tra: </align>" & "<b><font color=red>" & username & "</font></b>"//K: Get userdata from GSS userlist
         Size: =12
         Width: =560
-        X: =12
+        X: =38
         Y: =846
         ZIndex: =22
 
@@ -330,7 +330,7 @@ Screen1 As screen:
         Size: =24
         Text: ="Chụp ảnh"
         Width: =280
-        X: =163
+        X: =176
         Y: =785
         ZIndex: =27
 
