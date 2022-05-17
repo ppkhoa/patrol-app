@@ -119,7 +119,7 @@ Screen1 As screen:
                             __PowerAppsId__: ""
                         }
                     );*///send
-                    Patch('Hình ảnh tuần tra', Defaults('Hình ảnh tuần tra'), {Title: Dropdown1.SelectedText.'data-ADB4D7A662F548B49FAC2B986E348A1BColumn1', 'Ngày giờ': Label4, Data: AddMediaButton1.Media}); 
+                    Patch('Hình ảnh tuần tra', Defaults('Hình ảnh tuần tra'), {Title: Dropdown1.SelectedText.'data-ADB4D7A662F548B49FAC2B986E348A1BColumn1', 'Ngày giờ': Label4.Text, Data: AddMediaButton1.Media}); 
                     Set(
                         VarStartTimer,
                         true
