@@ -37,7 +37,7 @@
     "Timer2": 30
   },
   "FunctionParamsInvariantScripts": {},
-  "HeaderLastSavedDateTimeUTC": "05/17/2022 07:50:31",
+  "HeaderLastSavedDateTimeUTC": "05/17/2022 07:53:18",
   "IsLegacyComponentAllowGlobalScopeCase": false,
   "LocalConnectionIDReferences": {
     "48b19081-9dc3-4935-ad3a-bd7b5a33f421": "\"/providers/microsoft.powerapps/apis/shared_excelonlinebusiness/connections/bf590eba29bb4ad6b73b79d0d6fbb8ed\"",
@@ -64,7 +64,7 @@
     "MicrosoftTeams": 1,
     "MicrosoftTeams_1": 3,
     "Office365Users": 2,
-    "photo": 9,
+    "photoTaken": 9,
     "Table2": 6,
     "Table4": 7
   },
