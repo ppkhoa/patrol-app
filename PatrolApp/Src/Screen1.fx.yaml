@@ -320,3 +320,22 @@ Screen1 As screen:
         Y: =159
         ZIndex: =26
 
+    Button3 As button:
+        Height: =70
+        OnSelect: =ClearCollect(photo,Camera1.Photo)
+        Size: =24
+        Text: ="Button"
+        Width: =280
+        X: =190
+        Y: =931
+        ZIndex: =27
+
+    Camera1 As camera:
+        Camera: =0
+        Height: =33
+        Visible: =false
+        Width: =107
+        X: =506
+        Y: =811
+        ZIndex: =28
+
