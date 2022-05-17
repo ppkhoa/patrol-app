@@ -1,0 +1,46 @@
+Screen3 As screen:
+    OnVisible: =Set(VarStartCamTimer, false);
+
+    Camera1 As camera:
+        Camera: =0
+        Height: =735
+        Width: =530
+        X: =60
+        Y: =44
+        ZIndex: =1
+
+    Button3 As button:
+        Height: =46
+        OnSelect: |
+            =ClearCollect(photo,Camera1.Photo); UpdateContext({PhotoDateTime: "Đã chụp ảnh vào lúc" + Now()}); Set(
+                    VarStartCamTimer,
+                    true
+                );
+        Size: =24
+        Text: ="Chụp ảnh báo cáo"
+        Width: =356
+        X: =147
+        Y: =832
+        ZIndex: =2
+
+    Label4 As label:
+        Align: =Align.Center
+        Height: =44
+        Size: =21
+        Text: =PhotoDateTime
+        Width: =560
+        X: =45
+        Y: =892
+        ZIndex: =3
+
+    Timer2 As timer:
+        Duration: =2000
+        Height: =68
+        OnTimerEnd: =Navigate(Screen1,ScreenTransition.CoverRight)
+        Start: =VarStartCamTimer
+        Visible: =false
+        Width: =140
+        X: =488
+        Y: =1064
+        ZIndex: =4
+

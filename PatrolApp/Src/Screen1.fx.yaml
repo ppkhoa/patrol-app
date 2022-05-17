@@ -25,7 +25,7 @@ Screen1 As screen:
         ZIndex: =4
 
     Button1 As button:
-        Height: =68
+        Height: =42
         OnSelect: |-
             =UpdateContext(
                 {
@@ -74,7 +74,6 @@ Screen1 As screen:
         ZIndex: =5
 
     Button2 As button:
-        Height: =70
         OnSelect: |
             =If(
                 dist >= 0.050,
@@ -147,8 +146,8 @@ Screen1 As screen:
             ="Gửi báo cáo
             "
         Width: =318
-        X: =152
-        Y: =836
+        X: =144
+        Y: =884
         ZIndex: =10
 
     Dropdown1 As dropdown:
@@ -197,7 +196,7 @@ Screen1 As screen:
         Text: ="Kiểm tra tên người tuần tra trước khi gửi báo cáo."
         Width: =560
         X: =31
-        Y: =903
+        Y: =928
         ZIndex: =18
 
     Label5_2 As label:
@@ -240,8 +239,8 @@ Screen1 As screen:
             ="<center>Tên người tuần tra: </align>" & "<b><font color=red>" & username & "</font></b>"//K: Get userdata from GSS userlist
         Size: =12
         Width: =560
-        X: =24
-        Y: =802
+        X: =12
+        Y: =846
         ZIndex: =22
 
     Timer1 As timer:
@@ -294,7 +293,7 @@ Screen1 As screen:
         Text: ="Kết thúc tuần tra"
         Width: =318
         X: =152
-        Y: =980
+        Y: =1006
         ZIndex: =24
 
     Label3_1 As label:
@@ -320,22 +319,17 @@ Screen1 As screen:
         Y: =159
         ZIndex: =26
 
-    Button3 As button:
-        Height: =70
-        OnSelect: =ClearCollect(photo,Camera1.Photo)
+    Button4 As button:
+        Height: =43
+        OnSelect: |-
+            =Navigate(
+                    Screen3,
+                    ScreenTransition.None
+                );
         Size: =24
-        Text: ="Button"
+        Text: ="Chụp ảnh"
         Width: =280
-        X: =190
-        Y: =931
+        X: =163
+        Y: =785
         ZIndex: =27
-
-    Camera1 As camera:
-        Camera: =0
-        Height: =33
-        Visible: =false
-        Width: =107
-        X: =506
-        Y: =811
-        ZIndex: =28
 
