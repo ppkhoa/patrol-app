@@ -99,11 +99,11 @@ Screen1 As screen:
                         !IsBlank(lng),
                         !IsBlank(dist)
                     ),
-                    Patch(
+                    /*Patch(
                         Table4,
                         Defaults(Table4),
                         {
-                            'Mục tiêu': Dropdown1.SelectedText.'data-ADB4D7A662F548B49FAC2B986E348A1BColumn1',
+                            'Mục tiêu': Dropdown1.SelectedText.Column1,
                             'Địa chỉ báo cáo': targetAddress,
                             Điểm: Text(
                                 dist,
@@ -118,7 +118,7 @@ Screen1 As screen:
                             'Tọa độ check-in': lat & ", " & lng,
                             __PowerAppsId__: ""
                         }
-                    );//send
+                    );*///send
                     Patch('Hình ảnh tuần tra', Defaults('Hình ảnh tuần tra'), {Title: Dropdown1.SelectedText.'data-ADB4D7A662F548B49FAC2B986E348A1BColumn1', 'Ngày giờ': Label4, Data: AddMediaButton1.Media}); 
                     Set(
                         VarStartTimer,
