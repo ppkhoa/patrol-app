@@ -347,11 +347,13 @@ Screen1 As screen:
         ZIndex: =30
 
     "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
-        Height: =383
+        Height: =146
         Items: =photoTaken
         Layout: =Layout.Vertical
         TemplatePadding: =0
-        TemplateSize: =Min(160, Self.Height - 60)
+        TemplateSize: =146
+        Width: =156
+        Y: =750
         ZIndex: =31
 
         Image2 As image:
@@ -359,7 +361,6 @@ Screen1 As screen:
             Image: =ThisItem.Value
             OnSelect: =Select(Parent)
             Width: =128
-            X: =12
-            Y: =12
+            X: =15
             ZIndex: =1
 
