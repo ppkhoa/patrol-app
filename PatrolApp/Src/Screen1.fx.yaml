@@ -116,7 +116,7 @@ Screen1 As screen:
                             'Người tuần tra': Office365Users.UserProfileV2(User().Email).displayName,
                             'Ghi chú': TextInput1.Text,
                             'Tọa độ check-in': lat & ", " & lng,
-                            Image:AddMediaButton1.Media,
+                            'Image [image]':AddMediaButton1.Media,
                             __PowerAppsId__: ""
                         }
                     );//*///send
@@ -353,7 +353,7 @@ Screen1 As screen:
 
     "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
         Height: =220
-        Items: =Documents
+        Items: =Table4
         Layout: =Layout.Vertical
         TemplatePadding: =0
         TemplateSize: =Min(160, Self.Height - 60)
@@ -363,7 +363,7 @@ Screen1 As screen:
 
         Image2 As image:
             Height: =128
-            Image: =AddMediaButton1.Media
+            Image: =ThisItem.'Image [image]'
             OnSelect: =Select(Parent)
             Width: =128
             X: =16
