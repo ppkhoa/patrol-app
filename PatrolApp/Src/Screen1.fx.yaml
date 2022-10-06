@@ -352,7 +352,6 @@ Screen1 As screen:
         Layout: =Layout.Vertical
         TemplatePadding: =0
         TemplateSize: =Min(160, Self.Height - 60)
-        Y: =753
         ZIndex: =31
 
         Image2 As image:
