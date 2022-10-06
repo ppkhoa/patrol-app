@@ -110,7 +110,7 @@ Screen1 As screen:
                             'Người tuần tra': Office365Users.UserProfileV2(User().Email).displayName,
                             'Ghi chú': TextInput1.Text,
                             'Tọa độ check-in': lat & ", " & lng,
-                            'Image [image]':Gallery1.Selected.Image2,
+                            'Image [image]':Gallery1.Selected.Image2.Image,
                             __PowerAppsId__: ""
                         }
                     );//*///send
