@@ -55,35 +55,6 @@
     "dependents": [],
     "id": "75868fc1-27bd-46b1-87ab-c8bf060d9662"
   },
-  "a2817dd4-40ee-4d63-8e7a-a8f4021f437f": {
-    "connectionParameters": {
-      "sku": "Enterprise"
-    },
-    "connectionRef": {
-      "displayName": "SharePoint",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1568/1.0.1568.2756/sharepointonline/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline"
-    },
-    "datasets": {
-      "https://gssecurityjsc.sharepoint.com/sites/nv": {
-        "dataSources": {
-          "Documents": {
-            "tableName": "72858390-a39a-4091-b333-5e3a007bc599"
-          },
-          "Hình ảnh tuần tra": {
-            "tableName": "d69fc6fd-c3f5-4233-b1db-37a9932f9ca4"
-          }
-        }
-      }
-    },
-    "dataSources": [
-      "Hình ảnh tuần tra",
-      "Documents"
-    ],
-    "dependencies": {},
-    "dependents": [],
-    "id": "a2817dd4-40ee-4d63-8e7a-a8f4021f437f"
-  },
   "a36daa0d-b125-478c-a51f-90b226f02b43": {
     "connectionParameters": {
       "sku": "Enterprise"

@@ -10,7 +10,7 @@ Screen1 As screen:
             ="Địa chỉ thực tế: " & label1Text
         Width: =560
         X: =24
-        Y: =193
+        Y: =302
         ZIndex: =3
 
     Label2 As label:
@@ -116,7 +116,7 @@ Screen1 As screen:
                             'Người tuần tra': Office365Users.UserProfileV2(User().Email).displayName,
                             'Ghi chú': TextInput1.Text,
                             'Tọa độ check-in': lat & ", " & lng,
-                            'Image [image]':AddMediaButton1.Media,
+                            'Image [image]':AddMediaButton1.FileName,
                             __PowerAppsId__: ""
                         }
                     );//*///send
@@ -170,7 +170,7 @@ Screen1 As screen:
             ="Mục tiêu:"
         Width: =560
         X: =24
-        Y: =339
+        Y: =216
         ZIndex: =12
 
     Image1 As image:
@@ -350,30 +350,4 @@ Screen1 As screen:
         X: =224
         Y: =775
         ZIndex: =30
-
-    "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
-        Height: =220
-        Items: =Table4
-        Layout: =Layout.Vertical
-        TemplatePadding: =0
-        TemplateSize: =Min(160, Self.Height - 60)
-        Visible: =false
-        Y: =823
-        ZIndex: =31
-
-        Image2 As image:
-            Height: =128
-            Image: =ThisItem.'Image [image]'
-            OnSelect: =Select(Parent)
-            Width: =128
-            X: =16
-            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
-            ZIndex: =1
-
-        Separator1 As rectangle:
-            Height: =1
-            OnSelect: =Select(Parent)
-            Width: =Parent.TemplateWidth
-            Y: =Parent.TemplateHeight - 1
-            ZIndex: =5
 
