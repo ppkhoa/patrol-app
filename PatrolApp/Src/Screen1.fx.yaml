@@ -25,7 +25,7 @@ Screen1 As screen:
         ZIndex: =4
 
     Button1 As button:
-        Height: =42
+        Height: =56
         OnSelect: |-
             =UpdateContext(
                 {
@@ -69,11 +69,12 @@ Screen1 As screen:
         Size: =24
         Text: ="Xác nhận địa điểm"
         Width: =389
-        X: =117
-        Y: =711
+        X: =116
+        Y: =728
         ZIndex: =5
 
     Button2 As button:
+        Height: =56
         OnSelect: |
             =If(
                 dist >= 0.050,
@@ -110,7 +111,7 @@ Screen1 As screen:
                             'Người tuần tra': Office365Users.UserProfileV2(User().Email).displayName,
                             'Ghi chú': TextInput1.Text,
                             'Tọa độ check-in': lat & ", " & lng,
-                            'Image [image]':Gallery1.Selected.Image2.Image,
+                            //'Image [image]':Gallery1.Selected.Image2.Image,
                             __PowerAppsId__: ""
                         }
                     );//*///send
@@ -145,7 +146,7 @@ Screen1 As screen:
             "
         Width: =318
         X: =157
-        Y: =884
+        Y: =854
         ZIndex: =10
 
     Dropdown1 As dropdown:
@@ -193,8 +194,8 @@ Screen1 As screen:
         Size: =12
         Text: ="Kiểm tra tên người tuần tra trước khi gửi báo cáo."
         Width: =560
-        X: =44
-        Y: =928
+        X: =45
+        Y: =910
         ZIndex: =18
 
     Label5_2 As label:
@@ -238,7 +239,7 @@ Screen1 As screen:
         Size: =12
         Width: =560
         X: =39
-        Y: =836
+        Y: =806
         ZIndex: =22
 
     Timer1 As timer:
@@ -341,28 +342,9 @@ Screen1 As screen:
         Size: =25
         Text: ="Chụp ảnh"
         UseMobileCamera: =true
+        Visible: =false
         Width: =173
         X: =224
         Y: =775
         ZIndex: =30
-
-    "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
-        Default: =First(Self.AllItems)
-        Height: =146
-        Items: =photoTaken
-        Layout: =Layout.Vertical
-        OnSelect: =ThisItem.Value
-        TemplatePadding: =0
-        TemplateSize: =146
-        Width: =156
-        Y: =750
-        ZIndex: =31
-
-        Image2 As image:
-            Height: =128
-            Image: =ThisItem.Value
-            OnSelect: =Select(Parent)
-            Width: =128
-            X: =15
-            ZIndex: =1
 
