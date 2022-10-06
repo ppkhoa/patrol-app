@@ -99,11 +99,11 @@ Screen1 As screen:
                         !IsBlank(lng),
                         !IsBlank(dist)
                     ),
-                    /*Patch(
+                    Patch(
                         Table4,
                         Defaults(Table4),
                         {
-                            'Mục tiêu': Dropdown1.SelectedText.Column1,
+                            'Mục tiêu': Dropdown1.SelectedText.'data-ADB4D7A662F548B49FAC2B986E348A1BColumn1',
                             'Địa chỉ báo cáo': targetAddress,
                             Điểm: Text(
                                 dist,
@@ -116,12 +116,13 @@ Screen1 As screen:
                             'Người tuần tra': Office365Users.UserProfileV2(User().Email).displayName,
                             'Ghi chú': TextInput1.Text,
                             'Tọa độ check-in': lat & ", " & lng,
+                            Image: Camera1.Photo,
                             __PowerAppsId__: ""
                         }
-                    );*///send
+                    );//*///send
                     Set( PenVar, JSON( AddMediaButton1.Media,JSONFormat.IncludeBinaryData ) );
                     Set( PenInput64Bit, Mid(PenVar, 24,Len(PenVar) - 24 ) );
-                    Patch('Hình ảnh tuần tra', Defaults('Hình ảnh tuần tra'), {Title: Text(Dropdown1.SelectedText.'data-ADB4D7A662F548B49FAC2B986E348A1BColumn1'), 'Ngày giờ': Now(), Data: Camera1.Photo}); 
+                    //Patch(Targetlist, Defaults(Targetlist), {'Image': Text(Dropdown1.SelectedText.Column1), 'Ngày giờ': Now(), Data: Camera1.Photo}); 
                     Set(
                         VarStartTimer,
                         true

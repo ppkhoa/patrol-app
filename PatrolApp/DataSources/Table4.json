@@ -3,7 +3,7 @@
     "ApiId": "/providers/microsoft.powerapps/apis/shared_excelonlinebusiness",
     "CdpRevision": {
       "BaseUrl": "/",
-      "LastChangedTimeString": "2022-05-16T16:44:26.7390000Z",
+      "LastChangedTimeString": "2022-09-29T17:19:52.4020000Z",
       "RevisionNumber": 1
     },
     "ConnectedDataSourceInfoNameMapping": {
@@ -12,7 +12,7 @@
       "Điểm": "Điểm",
       "Ghi chú": "Ghi chú",
       "Giờ tuần tra": "Giờ tuần tra",
-      "Image [image]": "Image [image]",
+      "Image": "Image",
       "Mục tiêu": "Mục tiêu",
       "Người tuần tra": "Người tuần tra",
       "Tọa độ check-in": "Tọa độ check-in"
