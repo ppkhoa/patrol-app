@@ -116,7 +116,7 @@ Screen1 As screen:
                             'Người tuần tra': Office365Users.UserProfileV2(User().Email).displayName,
                             'Ghi chú': TextInput1.Text,
                             'Tọa độ check-in': lat & ", " & lng,
-                            Image: Camera1.Photo,
+                            Image:AddMediaButton1.Media,
                             __PowerAppsId__: ""
                         }
                     );//*///send
@@ -243,8 +243,8 @@ Screen1 As screen:
             ="<center>Tên người tuần tra: </align>" & "<b><font color=red>" & username & "</font></b>"//K: Get userdata from GSS userlist
         Size: =12
         Width: =560
-        X: =38
-        Y: =846
+        X: =39
+        Y: =836
         ZIndex: =22
 
     Timer1 As timer:
@@ -324,6 +324,7 @@ Screen1 As screen:
         ZIndex: =26
 
     Button4 As button:
+        DisplayMode: =DisplayMode.Disabled
         Height: =46
         OnSelect: |-
             =Navigate(
@@ -332,9 +333,9 @@ Screen1 As screen:
                 );
         Size: =24
         Text: ="Chụp ảnh"
+        Visible: =false
         Width: =280
-        X: =360
-        Y: =775
+        Y: =1082
         ZIndex: =27
 
     AddMediaButton1 As addMedia:
@@ -344,8 +345,35 @@ Screen1 As screen:
         Height: =48
         Size: =25
         Text: ="Chụp ảnh"
+        UseMobileCamera: =true
         Width: =173
         X: =224
         Y: =775
         ZIndex: =30
+
+    "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        Height: =220
+        Items: =Documents
+        Layout: =Layout.Vertical
+        TemplatePadding: =0
+        TemplateSize: =Min(160, Self.Height - 60)
+        Visible: =false
+        Y: =823
+        ZIndex: =31
+
+        Image2 As image:
+            Height: =128
+            Image: =AddMediaButton1.Media
+            OnSelect: =Select(Parent)
+            Width: =128
+            X: =16
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =1
+
+        Separator1 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =5
 

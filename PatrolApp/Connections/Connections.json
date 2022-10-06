@@ -67,6 +67,9 @@
     "datasets": {
       "https://gssecurityjsc.sharepoint.com/sites/nv": {
         "dataSources": {
+          "Documents": {
+            "tableName": "72858390-a39a-4091-b333-5e3a007bc599"
+          },
           "Hình ảnh tuần tra": {
             "tableName": "d69fc6fd-c3f5-4233-b1db-37a9932f9ca4"
           }
@@ -74,7 +77,8 @@
       }
     },
     "dataSources": [
-      "Hình ảnh tuần tra"
+      "Hình ảnh tuần tra",
+      "Documents"
     ],
     "dependencies": {},
     "dependents": [],
