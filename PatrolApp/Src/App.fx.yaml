@@ -5,5 +5,12 @@ App As appinfo:
     OnStart: |-
         =Set(VarStartTimer, false); Set(username, Office365Users.UserProfileV2(User().Email).displayName);
         Set(error, Blank());
-        Collect(photoTaken, Camera1.Photo);
+        Collect(photoTaken, {Url: Camera1.Photo});
+
+    Host As hostControl.DefaultHostControlVariant:
+        OnCancel: =false
+        OnEdit: =false
+        OnNew: =false
+        OnSave: =false
+        OnView: =false
 

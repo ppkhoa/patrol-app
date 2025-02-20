@@ -151,7 +151,7 @@ Screen1 As screen:
 
     Dropdown1 As dropdown:
         Height: =42
-        Items: =Filter(Targetlist, Column3 = Text(Dropdown1_1.Selected.Result))
+        Items: =Filter(Targetlist_1, Column3 = Text(Dropdown1_1.Selected.Result))
         Size: =21
         Width: =575
         X: =24
@@ -222,6 +222,7 @@ Screen1 As screen:
         ZIndex: =20
 
     HtmlText1 As htmlViewer:
+        DisabledBorderColor: =RGBA(56, 56, 56, 1)
         Height: =108
         HtmlText: |-
             ="Khoảng cách giữa điểm báo cáo và mục tiêu: <b><font color=BLUE>" & distOutput
@@ -233,6 +234,7 @@ Screen1 As screen:
 
     HtmlText2 As htmlViewer:
         AutoHeight: =true
+        DisabledBorderColor: =RGBA(56, 56, 56, 1)
         Height: =32
         HtmlText: |-
             ="<center>Tên người tuần tra: </align>" & "<b><font color=red>" & username & "</font></b>"//K: Get userdata from GSS userlist
@@ -308,10 +310,10 @@ Screen1 As screen:
     Dropdown1_1 As dropdown:
         Height: =50
         Items: |-
-            =Distinct(
-                Targetlist,
+            =ForAll(Distinct(
+                Targetlist_1,
                 Column3
-            ).Result
+            ), {Result: ThisRecord.Value}).Result
         Size: =21
         Width: =575
         X: =24

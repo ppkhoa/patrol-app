@@ -1,0 +1,441 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps is in preview. The schema is being actively developed.
+# Content may be incomplete and subject to change.
+# This file is read-only and should only be used to review changes made within Power Apps Studio.
+# This file isn't used when loading the app. External editing, merging and conflict resolution are
+# not supported.
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  Screen1:
+    Properties:
+      LoadingSpinnerColor: =RGBA(56, 96, 178, 1)
+      OnVisible: =Set(VarStartTimer, false);
+    Children:
+      - Label1:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Font: =Font.'Open Sans'
+            Height: =96
+            Live: =Live.Assertive
+            Text: |-
+              ="Địa chỉ thực tế: " & label1Text
+            X: =24
+            Y: =302
+      - Label2:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Font: =Font.'Open Sans'
+            Height: =33
+            Live: =Live.Polite
+            Size: =15
+            Text: |-
+              ="Tọa độ ghi nhận báo cáo: " & label2Text
+            Width: =602
+            X: =24
+            Y: =405
+      - Button1:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(56, 96, 178, 1)
+            Font: =Font.'Open Sans'
+            Height: =56
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            OnSelect: |-
+              =UpdateContext(
+                  {
+                      lat: Value(Location.Latitude,"en-US"),
+                      lng: Value(Location.Longitude,"en-US")
+                  }
+              );
+              Set(
+                  label1Text,
+                  BingMaps.GetLocationByPoint(
+                      lat,
+                      lng
+                  ).address.addressLine
+              );//S
+              Set(
+                  label2Text,
+                  lat & ", " & lng
+              );//G
+              Set(
+                  dist,
+                  With(
+                      {
+                          r: 6371,
+                          p: (Pi() / 180),
+                          latA: Value(Dropdown1.SelectedText.'data-ADB4D7A662F548B49FAC2B986E348A1BLat',"en-US"),
+                          lonA: Value(Dropdown1.SelectedText.'data-ADB4D7A662F548B49FAC2B986E348A1BLong',"en-US"),
+                          latB: lat,
+                          lonB: lng
+                      },
+                      (2 * r) * Asin(Sqrt(0.5 - Cos((latA - latB) * p)/2 + Cos(latB * p) * Cos(latA * p) * (1 - Cos((lonA - lonB) * p)) / 2))
+                  )
+              );//Khoa: Calculate distance between actual and saved coordinates
+              Set(
+                  targetAddress,
+                  BingMaps.GetLocationByPoint(
+                      lat,
+                      lng
+                  ).address.formattedAddress
+              );//K
+              Set(distOutput, Text(dist, "0.###", "en-US") & "</font></b> km");
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            Text: ="Xác nhận địa điểm"
+            Width: =389
+            X: =116
+            Y: =728
+      - Button2:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(56, 96, 178, 1)
+            Font: =Font.'Open Sans'
+            Height: =56
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            OnSelect: |
+              =If(
+                  dist >= 0.050,
+                  Set(
+                      error,
+                      "Chưa đến mục tiêu đã chọn! Yêu cầu khoảng cách dưới 50m"
+                  );
+                  Set(
+                      VarStartTimer,
+                      true
+                  );//S
+                  Navigate(
+                      Screen2_1,
+                      ScreenTransition.None
+                  );
+                  Set(
+                      VarStartTimer,
+                      true
+                  ),
+                  If(
+                      And(
+                          !IsBlank(lat),
+                          !IsBlank(lng),
+                          !IsBlank(dist)
+                      ),
+                      Patch(
+                          Table4,
+                          Defaults(Table4),
+                          {
+                              'Mục tiêu': Dropdown1.SelectedText.'data-ADB4D7A662F548B49FAC2B986E348A1BColumn1',
+                              'Địa chỉ báo cáo': targetAddress,
+                              Điểm: Text(dist, "0.###"),
+                              'Giờ tuần tra': Text(Now(), "mm/dd/yyyy hh:mm:ss"),
+                              'Người tuần tra': Office365Users.UserProfileV2(User().Email).displayName,
+                              'Ghi chú': TextInput1.Text,
+                              'Tọa độ check-in': lat & ", " & lng,
+                              //'Image [image]':Gallery1.Selected.Image2.Image,
+                              __PowerAppsId__: ""
+                          }
+                      );//*///send
+                      Set( PenVar, JSON( AddMediaButton1.Media,JSONFormat.IncludeBinaryData ) );
+                      Set( PenInput64Bit, Mid(PenVar, 24,Len(PenVar) - 24 ) );
+                      //Patch(Targetlist, Defaults(Targetlist), {'Image': Text(Dropdown1.SelectedText.Column1), 'Ngày giờ': Now(), Data: Camera1.Photo}); 
+                      Set(
+                          VarStartTimer,
+                          true
+                      );//k
+                      Navigate(
+                          Screen2,
+                          ScreenTransition.None
+                      ),
+                      Set(
+                          error,
+                          "Chưa điền đủ thông tin!"
+                      );//
+                      Set(
+                          VarStartTimer,
+                          true
+                      );
+                      Navigate(
+                          Screen2_1,
+                          ScreenTransition.None
+                      )
+                  )
+              );
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            Text: |-
+              ="Gửi báo cáo
+              "
+            Width: =318
+            X: =157
+            Y: =854
+      - Dropdown1:
+          Control: Classic/DropDown@2.3.1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            ChevronBackground: =RGBA(56, 96, 178, 1)
+            ChevronFill: =RGBA(255, 255, 255, 1)
+            ChevronHoverBackground: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            ChevronHoverFill: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Open Sans'
+            Height: =42
+            HoverFill: =RGBA(186, 202, 226, 1)
+            Items: =Filter(Targetlist_1, Column3 = Text(Dropdown1_1.Selected.Result))
+            Items.Value: =Column1
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(0, 18, 107, 1)
+            SelectionColor: =RGBA(255, 255, 255, 1)
+            SelectionFill: =RGBA(56, 96, 178, 1)
+            X: =24
+            Y: =273
+      - Label3:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Font: =Font.'Open Sans'
+            Height: =41
+            Text: ="Mục tiêu:"
+            X: =24
+            Y: =216
+      - Image1:
+          Control: Image@2.2.3
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =131
+            Image: ='LOGO 1-01'
+            ImagePosition: =ImagePosition.Fill
+            X: =144
+      - TextInput1:
+          Control: Classic/TextInput@2.3.2
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Default: =""
+            Font: =Font.'Open Sans'
+            Height: =108
+            HintText: |-
+              ="Ghi chú: Đánh giá tình hình hệ thống, khu vực xung quanh..."
+            HoverBorderColor: =RGBA(0, 18, 107, 1)
+            HoverFill: =RGBA(186, 202, 226, 1)
+            Mode: =TextMode.MultiLine
+            X: =24
+            Y: =569
+      - Label5_1:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Font: =Font.'Open Sans'
+            Height: =45
+            Size: =12
+            Text: ="Kiểm tra tên người tuần tra trước khi gửi báo cáo."
+            X: =45
+            Y: =910
+      - Label5_2:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Font: =Font.'Open Sans'
+            Height: =35
+            Size: =12
+            Text: |-
+              ="Phiên bản: 0.3"
+            X: =31
+            Y: =1068
+      - Label5_3:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Font: =Font.'Open Sans'
+            Height: =35
+            Size: =12
+            Text: ="Chỉ sử dụng cho nội bộ GSS"
+            X: =31
+            Y: =1088
+      - HtmlText1:
+          Control: HtmlViewer@2.1.0
+          Properties:
+            DisabledBorderColor: =RGBA(56, 56, 56, 1)
+            Font: =Font.'Open Sans'
+            Height: =108
+            HtmlText: |-
+              ="Khoảng cách giữa điểm báo cáo và mục tiêu: <b><font color=BLUE>" & distOutput
+            Size: =24
+            X: =24
+            Y: =459
+      - HtmlText2:
+          Control: HtmlViewer@2.1.0
+          Properties:
+            AutoHeight: =true
+            DisabledBorderColor: =RGBA(56, 56, 56, 1)
+            Font: =Font.'Open Sans'
+            Height: =32
+            HtmlText: |-
+              ="<center>Tên người tuần tra: </align>" & "<b><font color=red>" & username & "</font></b>"//K: Get userdata from GSS userlist
+            Size: =12
+            X: =39
+            Y: =806
+      - Timer1:
+          Control: Timer@2.1.0
+          Properties:
+            AutoPause: =false
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =ColorFade(Self.BorderColor, 70%)
+            DisabledColor: =ColorFade(Self.Fill, 90%)
+            DisabledFill: =ColorFade(Self.Fill, 70%)
+            Duration: =2000
+            Fill: =RGBA(56, 96, 178, 1)
+            Font: =Font.'Open Sans'
+            Height: =41
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            OnTimerEnd: |-
+              =Reset(Dropdown1);
+              Reset(TextInput1);
+              Reset(Timer1);
+              Set(
+                  label1Text,
+                  ""
+              );
+              Set(
+                  label2Text,
+                  ""
+              );
+              Set(
+                  dist,
+                  Blank()
+              );
+              Set(
+                  distOutput,
+                  Blank()
+              );
+              Set(
+                  lat,
+                  Blank()
+              );
+              Set(
+                  lng,
+                  Blank()
+              );
+              Navigate(Screen1, ScreenTransition.Fade);
+              Set(VarStartTimer, false);
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            Reset: |
+              =true
+            Start: =VarStartTimer
+            Visible: =false
+            Width: =92
+            X: =12
+            Y: =12
+      - Button2_1:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(168, 0, 0, 1)
+            Font: =Font.'Open Sans'
+            Height: =54
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            OnSelect: =Exit(true)
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            Size: =15
+            Text: ="Kết thúc tuần tra"
+            Width: =318
+            X: =152
+            Y: =1006
+      - Label3_1:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Font: =Font.'Open Sans'
+            Text: ="Nhóm mục tiêu:"
+            X: =24
+            Y: =98
+      - Dropdown1_1:
+          Control: Classic/DropDown@2.3.1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            ChevronBackground: =RGBA(56, 96, 178, 1)
+            ChevronFill: =RGBA(255, 255, 255, 1)
+            ChevronHoverBackground: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            ChevronHoverFill: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Open Sans'
+            Height: =50
+            HoverFill: =RGBA(186, 202, 226, 1)
+            Items: |-
+              =ForAll(Distinct(
+                  Targetlist_1,
+                  Column3
+              ), {Result: ThisRecord.Value}).Result
+            Items.Value: =Result
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(0, 18, 107, 1)
+            SelectionColor: =RGBA(255, 255, 255, 1)
+            SelectionFill: =RGBA(56, 96, 178, 1)
+            X: =24
+            Y: =159
+      - Button4:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(56, 96, 178, 1)
+            Font: =Font.'Open Sans'
+            Height: =46
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            OnSelect: |-
+              =Navigate(
+                      Screen3,
+                      ScreenTransition.None
+                  );
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            Text: ="Chụp ảnh"
+            Visible: =false
+            Y: =1082
+      - AddMediaButton1:
+          Control: AddMedia@2.2.1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            ChangePictureText: ="Thay đổi"
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(56, 96, 178, 1)
+            Height: =48
+            OnSelect: =ClearCollect(photoTaken,AddMediaButton1.Media);
+            Size: =25
+            Text: ="Chụp ảnh"
+            UseMobileCamera: =true
+            Visible: =false
+            Width: =173
+            X: =224
+            Y: =775
